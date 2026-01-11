@@ -2,130 +2,143 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products</title>
-    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="./src/output.css" />
 </head>
 
 <body>
-    <!-- Responsive Navbar -->
-    <nav class="bg-green-100 p-3 flex items-center justify-between shadow-xl sticky top-0 z-10">
-        <h1 class="text-2xl">Greenden</h1>
-        <!-- hero icons -->
+    <nav class="bg-rose-100 p-3 flex items-center justify-between shadow-xl sticky top-0 z-10">
+        <h1 class="text-2xl text-rose-950 font-semibold">Roseden</h1>
 
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            class="size-6 md:hidden">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
+        <div class="flex items-center gap-4">
+            <span class="relative inline-flex items-center text-rose-950">
+                <span class="font-medium">Cart</span>
+                <span id="cartCount"
+                    class="ml-2 text-xs bg-rose-950 text-white rounded-full px-2 py-0.5 min-w-[24px] text-center">0</span>
+            </span>
 
-        <!-- <ul class="flex gap-5 text-gray-600 hidden md:flex "> -->
-        <ul class=" gap-5 text-gray-600 hidden md:flex ">
+            <button id="menuBtn" class="md:hidden" aria-label="Open Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6 text-rose-950">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
 
-
+        <ul class="gap-5 text-gray-600 hidden md:flex">
             <li>
-                <a class="hover:underline hover:text-black" href="C:\Users\shynie.L\Desktop\TAILWINDCSS\index.html">Home</a>
+                <a class="hover:underline text-rose-950 hover:text-black" href="./index.html">Home</a>
             </li>
             <li>
-                <a class="hover:underline hover:text-black" href="C:\Users\shynie.L\Desktop\TAILWINDCSS\product.html">Products</a>
+                <a class="hover:underline text-rose-950 hover:text-black" href="./product.html">Products</a>
             </li>
             <li>
-                <a class="hover:underline hover:text-black" href="C:\Users\shynie.L\Desktop\TAILWINDCSS\contact.html">Contact</a>
+                <a class="hover:underline text-rose-950 hover:text-black" href="./contact.html">Contact</a>
             </li>
-
         </ul>
-
     </nav>
 
-    <!-- Our Products section & input -->
-
-    <!-- <section class="items-center">
-       <h1 class="text-3xl font-bold mt-5 text-center">Our Products</h1>
-       <input type="text" placeholder="Search for a Product..." class="border border-black p-2 m-3 flex " style="width: 80%;">
-     </section> -->
+    <div id="mobileMenu" class="md:hidden hidden bg-rose-100 shadow-xl border-t border-rose-200">
+        <ul class="flex flex-col p-4 gap-3 text-gray-700">
+            <li><a class="hover:underline hover:text-black" href="./index.html">Home</a></li>
+            <li><a class="hover:underline hover:text-black" href="./product.html">Products</a></li>
+            <li><a class="hover:underline hover:text-black" href="./contact.html">Contact</a></li>
+        </ul>
+    </div>
 
     <section class="text-center">
-        <h1 class="text-3xl font-bold mt-5 text-center">Our Products</h1>
-        <input type="text" placeholder="Search for a product here..." class="border border-black p-2 m-3"
-            style="width: 80%;">
+        <h1 class="text-3xl text-rose-950 font-bold mt-5 text-center">Our Products</h1>
 
+        <input id="productSearch" type="text" placeholder="Search for a product here..."
+            class="border border-rose-950 text-rose-900 p-2 m-3" style="width: 80%;" />
+
+        <p id="productMsg" class="text-sm text-rose-900"></p>
     </section>
 
-    <!-- Image-grid -->
-    <section class="p-6  text-center">
+    <section class="p-6 text-center">
         <div class="grid grid-cols-2 md:grid-cols-4 mt-5 gap-5">
-            <div>
+
+            <div class="product-card" data-name="pink rose bouquet">
                 <img src="./images/Best-seller_1.jpg" alt=""
-                    class="inline hover:shadow-xl hover:transform hover:-translate-y-2 ">
-                <h1>Rose Plant</h1>
-                <p>$20</p>
+                    class="inline hover:shadow-xl hover:transform hover:-translate-y-2" />
+                <h1 class="text-rose-950">Pink Rose Bouquet</h1>
+                <p class="text-rose-950">$20</p>
+                <button class="add-to-cart bg-rose-950 text-white px-3 py-1 rounded mt-2">Add to Cart</button>
             </div>
 
-            <div>
+            <div class="product-card" data-name="yellow roses">
                 <img src="./images/Best-seller_2.jpg" alt=""
-                    class="inline hover:shadow-xl hover:transform hover:-translate-y-2 ">
-                <h1>Rose Plant</h1>
-                <p>$20</p>
+                    class="inline hover:shadow-xl hover:transform hover:-translate-y-2" />
+                <h1 class="text-rose-950">Yellow Roses</h1>
+                <p class="text-rose-950">$20</p>
+                <button class="add-to-cart bg-rose-950 text-white px-3 py-1 rounded mt-2">Add to Cart</button>
             </div>
 
-            <div>
+            <div class="product-card" data-name="white roses">
                 <img src="./images/Best-seller_3.jpg" alt=""
-                    class="inline hover:shadow-xl hover:transform hover:-translate-y-2 ">
-                <h1>Rose Plant</h1>
-                <p>$20</p>
+                    class="inline hover:shadow-xl hover:transform hover:-translate-y-2" />
+                <h1 class="text-rose-950">White Roses</h1>
+                <p class="text-rose-950">$20</p>
+                <button class="add-to-cart bg-rose-950 text-white px-3 py-1 rounded mt-2">Add to Cart</button>
             </div>
 
-            <div>
+            <div class="product-card" data-name="blue roses">
                 <img src="./images/Best-seller_4.jpg" alt=""
-                    class="inline hover:shadow-xl hover:transform hover:-translate-y-2 ">
-                <h1>Rose Plant</h1>
-                <p>$20</p>
+                    class="inline hover:shadow-xl hover:transform hover:-translate-y-2" />
+                <h1 class="text-rose-950">Blue Roses</h1>
+                <p class="text-rose-950">$20</p>
+                <button class="add-to-cart bg-rose-950 text-white px-3 py-1 rounded mt-2">Add to Cart</button>
             </div>
 
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 mt-5 gap-5">
-            <div class="">
-                <img src="./images/Best-seller_1.jpg" alt=""
-                    class="inline hover:shadow-xl hover:transform hover:-translate-y-2 ">
-                <h1>Rose Plant</h1>
-                <p>$20</p>
+
+            <div class="product-card" data-name="assorted roses">
+                <img src="./images/Best-seller_5.jpg" alt=""
+                    class="inline hover:shadow-xl hover:transform hover:-translate-y-2" />
+                <h1 class="text-rose-950">Assorted Roses</h1>
+                <p class="text-rose-950">$20</p>
+                <button class="add-to-cart bg-rose-950 text-white px-3 py-1 rounded mt-2">Add to Cart</button>
             </div>
 
-            <div>
-                <img src="./images/Best-seller_2.jpg" alt=""
-                    class="inline hover:shadow-xl hover:transform hover:-translate-y-2 ">
-                <h1>Rose Plant</h1>
-                <p>$20</p>
+            <div class="product-card" data-name="hydrangea light pink green">
+                <img src="./images/Best-seller_6.jpg" alt=""
+                    class="inline hover:shadow-xl hover:transform hover:-translate-y-2" />
+                <h1 class="text-rose-950">Hydrangea (Light Pink / Green)</h1>
+                <p class="text-rose-950">$20</p>
+                <button class="add-to-cart bg-rose-950 text-white px-3 py-1 rounded mt-2">Add to Cart</button>
             </div>
 
-            <div>
-                <img src="./images/Best-seller_3.jpg" alt=""
-                    class="inline hover:shadow-xl hover:transform hover:-translate-y-2 ">
-                <h1>Rose Plant</h1>
-                <p>$20</p>
+            <div class="product-card" data-name="red chrysanthemums">
+                <img src="./images/Best-seller_7.jpg" alt=""
+                    class="inline hover:shadow-xl hover:transform hover:-translate-y-2" />
+                <h1 class="text-rose-950">Red Chrysanthemums</h1>
+                <p class="text-rose-950">$20</p>
+                <button class="add-to-cart bg-rose-950 text-white px-3 py-1 rounded mt-2">Add to Cart</button>
             </div>
 
-            <div>
-                <img src="./images/Best-seller_4.jpg" alt=""
-                    class="inline hover:shadow-xl hover:transform hover:-translate-y-2 ">
-                <h1>Rose Plant</h1>
-                <p>$20</p>
+            <div class="product-card" data-name="mixed bouquet lilies roses">
+                <img src="./images/Best-seller_8.jpg" alt=""
+                    class="inline hover:shadow-xl hover:transform hover:-translate-y-2" />
+                <h1 class="text-rose-950">Mixed Bouquet (Lilies + Roses)</h1>
+                <p class="text-rose-950">$20</p>
+                <button class="add-to-cart bg-rose-950 text-white px-3 py-1 rounded mt-2">Add to Cart</button>
             </div>
 
         </div>
-
     </section>
 
-    <!-- Footer -->
-    <section class="bg-green-100 p-10 flex flex-col gap-5">
-        <h1 class="text-4xl font-bold">Greenden</h1>
-        <p>The Standard chunk of Lorem ipsum used sinc the 1500s is reproduces below for those interest.</p>
-        <p>@2021 Greenday.com</p>
+    <section class="bg-rose-100 p-10 flex flex-col gap-5">
+        <h1 class="text-4xl font-bold text-rose-950">Roseden</h1>
+        <p class="text-rose-950">The Standard chunk of Lorem ipsum used sinc the 1500s is reproduces below for those interest.</p>
+        <p class="text-rose-950">@2026 Roseday.com</p>
     </section>
 
-
-
+    <script src="./src/app.js"></script>
 </body>
 
 </html>
